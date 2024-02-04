@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #E5C07B;
+}
+
+button {
+    background: #CCCCCC;
+	color: #1D2025;
+	border: #1D2025 solid 1px;
+	padding: 0;
+	cursor: pointer;
+	outline: none;
+    height: 70px;
+    border-radius: 7px;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    width: 400px;
+    height: 600px;
+    background: #282C34;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 0px 50px 0px #282C34;
+}
+
+.buttons-grid{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+}
+
+.result{
+
+}
+button:hover {
+    background-color: #ABB2BF;
+}
+
+button.functional-btn {
+    background-color: #ABB2BF;
+}
+
+button.functional-btn:hover {
+    background-color: #CCCCCC;
+}
+
+.functional-btn.equal-btn {
+    color: #CCCCCC;
+    background-color: #E06C75;
+}
+.functional-btn.equal-btn:hover {
+    background-color: #d85964;
+}
+
+.functional-btn.del {
+    color: #528BFF;
+}
+
+.result {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 60px;
+    color: #98C379;
+    margin: 10px;
+}
+
+.sub {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #98C379;
+    margin: 0 10px;
+}
