@@ -4,3 +4,7 @@ function addNumber(number){
     }
     document.getElementById('current-number').value += number;
 }
+
+function clearAll(){
+    document.getElementById('current-number').value = '';
+}
