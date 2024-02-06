@@ -7,4 +7,5 @@ function addNumber(number){
 
 function clearAll(){
     document.getElementById('current-number').value = '';
+    previousNumber = 0;
 }
