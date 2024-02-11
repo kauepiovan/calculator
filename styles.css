@@ -10,11 +10,11 @@ html {
 
 button {
     background: #CCCCCC;
-	color: #1D2025;
-	border: #1D2025 solid 1px;
-	padding: 0;
-	cursor: pointer;
-	outline: none;
+    color: #1D2025;
+    border: #1D2025 solid 1px;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
     height: 70px;
     border-radius: 7px;
     font-size: 24px;
@@ -102,7 +102,7 @@ button.functional-btn:hover {
 }
 
 
-#current-number {
+#output {
     border:none;
     color: #98C379;
     background-image:none;

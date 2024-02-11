@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
 </head>
+
 <body>
-    <main>
-        <div class="main-content">
-            <div class="sub">
-                <input type="text" maxlength="12" id="previous-number" value="">
-            </div>
-            <div class="result">
-                <input type="text" maxlength="12" id="current-number" value="">
-            </div>
+  <main>
+    <div class="main-content">
+      <div class="sub">
+        <input type="text" maxlength="12" id="previous-number" value="">
+      </div>
+      <div class="result">
+        <input type="text" maxlength="12" id="output" value="">
+      </div>
 
-            <div class="buttons-grid">
-                <button class="functional-btn">&#37;</button>
-                <button class="functional-btn">CE</button>
-                <button class="functional-btn" onclick="clearAll()">C</button>
-                <button class="functional-btn del">del</button>
+      <div class="buttons-grid">
+        <button class="functional-btn">&#37;</button>
+        <button class="functional-btn">CE</button>
+        <button class="functional-btn" onclick="clearAll()">C</button>
+        <button class="functional-btn del" onclick="deleteAllOutput()">del</button>
 
-                <button class="functional-btn">&#185;/x</button>
-                <button class="functional-btn">x&#178;</button>
-                <button class="functional-btn">&#8730;x</button>
+        <button class="functional-btn">&#185;/x</button>
+        <button class="functional-btn">x&#178;</button>
+        <button class="functional-btn">&#8730;x</button>
 
-                <button class="functional-btn" id="division">&#247;</button>
+        <button class="functional-btn" id="division" onclick="setOperation('division')">&#247;</button>
 
-                <button onclick="addNumber(7)">7</button>
-                <button onclick="addNumber(8)">8</button>
-                <button onclick="addNumber(9)">9</button>
+        <button onclick="show(7)">7</button>
+        <button onclick="show(8)">8</button>
+        <button onclick="show(9)">9</button>
 
-                <button class="functional-btn" id="multiplication">&#215;</button>
+        <button class="functional-btn" id="multiplication" onclick="setOperation('multiplication')">&#215;</button>
 
-                <button onclick="addNumber(4)">4</button>
-                <button onclick="addNumber(5)">5</button>
-                <button onclick="addNumber(6)">6</button>
+        <button onclick="show(4)">4</button>
+        <button onclick="show(5)">5</button>
+        <button onclick="show(6)">6</button>
 
-                <button class="functional-btn" id="subtraction">&#8722;</button>
+        <button class="functional-btn" id="subtraction" onclick="setOperation('subtraction')">&#8722;</button>
 
-                <button onclick="addNumber(1)">1</button>
-                <button onclick="addNumber(2)">2</button>
-                <button onclick="addNumber(3)">3</button>
+        <button onclick="show(1)">1</button>
+        <button onclick="show(2)">2</button>
+        <button onclick="show(3)">3</button>
 
-                <button class="functional-btn" id="sum" onclick="sum()">&#43;</button>
+        <button class="functional-btn" id="sum" onclick="setOperation('sum')">&#43;</button>
 
-                <button class="functional-btn">&#43;/&#8722;</button>
-                <button onclick="addNumber(0)">0</button>
-                <button class="functional-btn">&#8729;</button>
+        <button class="functional-btn">&#43;/&#8722;</button>
+        <button onclick="show(0)">0</button>
+        <button class="functional-btn">&#8729;</button>
 
-                <button class="functional-btn equal-btn">&#61;</button>
-            </div>
-        </div>
-    </main>
+        <button class="functional-btn equal-btn" onclick="equals()">&#61;</button>
+      </div>
+    </div>
+  </main>
 </body>
+
 </html>
