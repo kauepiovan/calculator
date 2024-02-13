@@ -1,19 +1,32 @@
 // show the typing characters
-let number1, number;
+let number1, number2;
 let operation;
 
 function show(character) {
   // to set the max length to output
+  if (
+    document.getElementById("output").value.includes(".") &&
+    character == "."
+  ) {
+    character = "";
+  }
   if (document.getElementById("output").value.length <= 11) {
-    document.getElementById("output").value += character;
+    if (document.getElementById("output").value == "" && character == ".") {
+      document.getElementById("output").value = "0.";
+    } else {
+      document.getElementById("output").value += character;
+    }
   }
 }
 // set the operations
 function setOperation(input) {
   if (document.getElementById("output").value.length > 0) {
     number1 = setNumberOne();
-    clearOutput();
+  } else {
+    number1 = 0;
   }
+
+  clearOutput();
 
   switch (input) {
     case "sum":
@@ -41,6 +54,51 @@ function setOperation(input) {
   }
 }
 
+function percent() {
+  if (number1 == 0 || number1 == "") {
+    document.getElementById("output").value = 0;
+  } else {
+    let currentNumber = document.getElementById("output").value;
+    let percentNumber = (currentNumber / 100) * number1;
+    document.getElementById("output").value = percentNumber;
+  }
+}
+
+function oneDivided() {
+  if (
+    !(
+      document.getElementById("output").value == undefined ||
+      document.getElementById("output").value == ""
+    )
+  ) {
+    output = document.getElementById("output").value;
+  }
+  else {
+    output = 0;
+  }
+  number = 1 / parseFloat(output)
+  document.getElementById("output").value = number;
+}
+
+function pow() {
+  output = document.getElementById("output").value;
+  document.getElementById("output").value = Math.pow(output, 2)
+}
+
+function squareRoot() {
+  output = document.getElementById("output").value;
+  document.getElementById("output").value = Math.sqrt(output, 2)
+}
+
+function minusPlus() {
+  let output = parseFloat(document.getElementById("output").value);
+  if (output > 0) {
+    document.getElementById("output").value = `-${output}`;
+  } else {
+    document.getElementById("output").value = Math.abs(output);
+  }
+}
+
 // execute the operation
 function equals() {
   let result;
@@ -51,25 +109,25 @@ function equals() {
     number2 = 0;
   }
 
-  if (number1 == undefined || number == "") {
+  if (number1 == undefined || number2 == "") {
     number1 = 0;
   }
 
   switch (operation) {
     case "sum":
-      result = parseInt(number1) + parseInt(number2);
+      result = parseFloat(number1) + parseFloat(number2);
       break;
 
     case "subtraction":
-      result = parseInt(number1) - parseInt(number2);
+      result = parseFloat(number1) - parseFloat(number2);
       break;
 
     case "multiplication":
-      result = parseInt(number1) * parseInt(number2);
+      result = parseFloat(number1) * parseFloat(number2);
       break;
 
     case "division":
-      result = parseInt(number1) / parseInt(number2);
+      result = parseFloat(number1) / parseFloat(number2);
       break;
 
     case undefined:
@@ -83,7 +141,8 @@ function equals() {
   }
 
   document.getElementById("output").value = result;
-  document.getElementById("previous-number").value += `${number2} =`;
+  number1 = result;
+  document.getElementById("previous-number").value += ` ${number2} =`;
 }
 
 // show the results
@@ -99,6 +158,12 @@ function deleteAllOutput() {
 
 function clearOutput() {
   document.getElementById("output").value = "";
+}
+
+function deleteCharacter() {
+  let arrayNumbers = document.getElementById("output").value.split("");
+  arrayNumbers.pop();
+  document.getElementById("output").value = arrayNumbers.join("");
 }
 
 // get the number
@@ -117,7 +182,7 @@ function getOutput() {
   let output = document.getElementById("output").value;
 
   for (character of output) {
-    if (!isNaN(character)) {
+    if (!isNaN(character) || character == "-" || character == ".") {
       number += character;
     }
   }

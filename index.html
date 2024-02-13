@@ -19,16 +19,16 @@
         </div>
 
         <div class="buttons-grid">
-          <button class="functional-btn">&#37;</button>
-          <button class="functional-btn">CE</button>
-          <button class="functional-btn" onclick="clearAll()">C</button>
-          <button class="functional-btn del" onclick="deleteAllOutput()">
+          <button class="functional-btn" onclick="percent()">&#37;</button>
+          <button class="functional-btn" onclick="clearOutput()">CE</button>
+          <button class="functional-btn" onclick="deleteAllOutput()">C</button>
+          <button class="functional-btn del" onclick="deleteCharacter()">
             del
           </button>
 
-          <button class="functional-btn">&#185;/x</button>
-          <button class="functional-btn">x&#178;</button>
-          <button class="functional-btn">&#8730;x</button>
+          <button class="functional-btn" onclick="oneDivided()">&#185;/x</button>
+          <button class="functional-btn" onclick="pow()">x&#178;</button>
+          <button class="functional-btn" onclick="squareRoot()">&#8730;x</button>
 
           <button
             class="functional-btn"
@@ -69,9 +69,9 @@
             &#43;
           </button>
 
-          <button class="functional-btn">&#43;/&#8722;</button>
+          <button class="functional-btn" onclick="minusPlus()">&#43;/&#8722;</button>
           <button onclick="show(0)">0</button>
-          <button class="functional-btn">&#8729;</button>
+          <button class="functional-btn" onclick="show('.')">&#8729;</button>
 
           <button class="functional-btn equal-btn" onclick="equals()">
             &#61;
