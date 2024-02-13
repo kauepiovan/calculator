@@ -84,7 +84,6 @@ button.functional-btn:hover {
   font-weight: 500;
   font-size: 20px;
   color: #98c379;
-  margin: 0 10px;
 }
 
 #previous-number {
@@ -96,7 +95,7 @@ button.functional-btn:hover {
   -moz-box-shadow: none;
   box-shadow: none;
   width: 100%;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   text-align: end;
   font-size: 20px;
 }
@@ -110,7 +109,7 @@ button.functional-btn:hover {
   -moz-box-shadow: none;
   box-shadow: none;
   width: 100%;
-  margin: 20px 0;
+  margin: 0 0px 20px 0;
   text-align: end;
   font-size: 60px;
 }

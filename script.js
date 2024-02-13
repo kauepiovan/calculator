@@ -1,11 +1,13 @@
-// show the digiteds characters
+// show the typing characters
 let number1, number;
 let operation;
 
 function show(character) {
-  document.getElementById("output").value += character;
+  // to set the max length to output
+  if (document.getElementById("output").value.length <= 11) {
+    document.getElementById("output").value += character;
+  }
 }
-
 // set the operations
 function setOperation(input) {
   if (document.getElementById("output").value.length > 0) {
@@ -16,18 +18,22 @@ function setOperation(input) {
   switch (input) {
     case "sum":
       operation = "sum";
+      document.getElementById("previous-number").value = `${number1} +`;
       break;
 
     case "subtraction":
       operation = "subtraction";
+      document.getElementById("previous-number").value = `${number1} -`;
       break;
 
     case "multiplication":
       operation = "multiplication";
+      document.getElementById("previous-number").value = `${number1} *`;
       break;
 
     case "division":
       operation = "division";
+      document.getElementById("previous-number").value = `${number1} /`;
       break;
 
     default:
@@ -77,6 +83,7 @@ function equals() {
   }
 
   document.getElementById("output").value = result;
+  document.getElementById("previous-number").value += `${number2} =`;
 }
 
 // show the results
@@ -84,6 +91,7 @@ function equals() {
 // clear output
 function deleteAllOutput() {
   document.getElementById("output").value = "";
+  document.getElementById("previous-number").value = "";
   number1 = "";
   number2 = "";
   operation = "";
