@@ -98,6 +98,8 @@ button.functional-btn:hover {
   margin: 20px 0 0 0;
   text-align: end;
   font-size: 20px;
+  outline: none;
+  cursor: default;
 }
 
 #output {
@@ -112,4 +114,6 @@ button.functional-btn:hover {
   margin: 0 0px 20px 0;
   text-align: end;
   font-size: 60px;
+  outline: none;
+  cursor: default;
 }
